@@ -7,17 +7,19 @@ import Button from './components/Button/Button';
 
 
 export default function App() {
-  	const [currentPage, setCurrentPage] = useState('first');
+  	const [currentPage,setCurrentPage] = useState('firstPage');
 
-	const renderPage = () => {
-        if (currentPage === 'first') {
+	const renderPage = ()=>{
+		if (currentPage === 'firstPage') {
             return <FirstSection />;
-        } else if (currentPage === 'second') {
+        } else if (currentPage === 'secondPage') {
             return <SecondSection />;
         } else {
-            return <FirstSection />;
+            return <FirstSection />; 
         }
-    };
+	}
+
+
 	return (
 		<>
 			<Header/>
@@ -26,15 +28,15 @@ export default function App() {
                     <h3>Navigation</h3>
                     <Button
                         text="First Section"
-                        isActive={currentPage === 'first'}
-                        clickB={() => setCurrentPage('first')}
+						isActive = {currentPage == 'firstPage'}
+						clickB={()=>{setCurrentPage('firstPage')}}
                     />
                     <Button
                         text="Second Section"
-                        isActive={currentPage === 'second'}
-                        clickB={() => setCurrentPage('second')}
+						isActive = {currentPage == 'secondPage'}
+						clickB={()=>{setCurrentPage('secondPage')}}
                     />
-                    {renderPage()}
+					{renderPage()}
                 </section>
 				
 			</main>
