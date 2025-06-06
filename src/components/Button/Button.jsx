@@ -1,9 +1,9 @@
-import './Button.css'
+import classes from './Button.module.css'
 
 export default function Button({text, clickB, isActive }){
-    let className = 'button'
+    let className = `${classes.button}`
     if (isActive === true){
-        className = 'button active'
+        className = `${classes.button} ${classes.active}`
     }
     return (
         <button className={className } onClick={clickB} >
